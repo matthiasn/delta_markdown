@@ -214,6 +214,10 @@ class DeltaMarkdownEncoder extends Converter<String, String> {
       buffer.write('**');
     } else if (attribute.key == Attribute.italic.key) {
       buffer.write('_');
+    } else if (attribute.key == Attribute.strikeThrough.key) {
+      buffer.write('~~');
+    } else if (attribute.key == Attribute.inlineCode.key) {
+      buffer.write('`');
     } else if (attribute.key == Attribute.link.key) {
       buffer.write(!close ? '[' : '](${attribute.value})');
     } else if (attribute == Attribute.codeBlock) {
