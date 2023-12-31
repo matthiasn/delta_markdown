@@ -243,6 +243,10 @@ class DeltaMarkdownEncoder extends Converter<String, String> {
       buffer.write('* ');
     } else if (block == Attribute.ol) {
       buffer.write('1. ');
+    } else if (block == Attribute.checked) {
+      buffer.write('– [x] ');
+    } else if (block == Attribute.unchecked) {
+      buffer.write('– [ ] ');
     } else if (block.key == Attribute.h1.key && block.value == 1) {
       buffer.write('# ');
     } else if (block.key == Attribute.h2.key && block.value == 2) {
