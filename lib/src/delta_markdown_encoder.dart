@@ -21,7 +21,7 @@ class DeltaMarkdownEncoder extends Converter<String, String> {
   String convert(String input) {
     markdownBuffer = StringBuffer();
     lineBuffer = StringBuffer();
-    currentInlineStyle = Style();
+    currentInlineStyle = const Style();
     currentBlockLines = <String>[];
 
     final inputJson = jsonDecode(input) as List<dynamic>?;
